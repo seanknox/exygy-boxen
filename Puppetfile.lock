@@ -9,6 +9,16 @@ GITHUBTARBALL
     brewcask (0.0.6)
 
 GITHUBTARBALL
+  remote: boxen/puppet-cmake
+  specs:
+    cmake (1.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-ctags
+  specs:
+    ctags (1.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-dnsmasq
   specs:
     dnsmasq (2.0.1)
@@ -34,6 +44,11 @@ GITHUBTARBALL
     go (2.1.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-heroku
+  specs:
+    heroku (2.1.1)
+
+GITHUBTARBALL
   remote: boxen/puppet-homebrew
   specs:
     homebrew (1.12.0)
@@ -42,6 +57,16 @@ GITHUBTARBALL
   remote: boxen/puppet-hub
   specs:
     hub (1.4.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-imagemagick
+  specs:
+    imagemagick (1.3.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-mysql
+  specs:
+    mysql (2.0.1)
 
 GITHUBTARBALL
   remote: boxen/puppet-nginx
@@ -59,14 +84,34 @@ GITHUBTARBALL
     openssl (1.0.0)
 
 GITHUBTARBALL
-  remote: boxen/puppet-phantomjs
+  remote: boxen/puppet-osx
   specs:
-    phantomjs (2.4.0)
+    osx (2.7.1)
 
 GITHUBTARBALL
   remote: boxen/puppet-pkgconfig
   specs:
     pkgconfig (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-postgresql
+  specs:
+    postgresql (3.0.3)
+
+GITHUBTARBALL
+  remote: boxen/puppet-protobuf
+  specs:
+    protobuf (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-python
+  specs:
+    python (1.3.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-redis
+  specs:
+    redis (3.1.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-repository
@@ -79,14 +124,44 @@ GITHUBTARBALL
     ruby (8.5.2)
 
 GITHUBTARBALL
+  remote: boxen/puppet-sublime_text
+  specs:
+    sublime_text (1.1.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-sudo
   specs:
     sudo (1.0.0)
 
 GITHUBTARBALL
-  remote: boxen/puppet-xquartz
+  remote: boxen/puppet-sysctl
   specs:
-    xquartz (1.2.1)
+    sysctl (1.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-vagrant
+  specs:
+    vagrant (3.2.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-vim
+  specs:
+    vim (1.0.5)
+
+GITHUBTARBALL
+  remote: boxen/puppet-virtualbox
+  specs:
+    virtualbox (1.0.10)
+
+GITHUBTARBALL
+  remote: boxen/puppet-wget
+  specs:
+    wget (1.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-zsh
+  specs:
+    zsh (1.0.0)
 
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
@@ -101,28 +176,43 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: ripienaar/puppet-module-data
   specs:
-    module_data (0.0.3)
+    module_data (0.0.4)
 
 DEPENDENCIES
   boxen (= 3.10.4)
   brewcask (= 0.0.6)
+  cmake (= 1.0.1)
+  ctags (= 1.0.0)
   dnsmasq (= 2.0.1)
   foreman (= 1.2.0)
   gcc (= 2.2.1)
   git (= 2.7.9)
   go (= 2.1.0)
+  heroku (= 2.1.1)
   homebrew (= 1.12.0)
   hub (= 1.4.1)
+  imagemagick (= 1.3.0)
   inifile (= 1.1.1)
-  module_data (= 0.0.3)
+  module_data (= 0.0.4)
+  mysql (= 2.0.1)
   nginx (= 1.4.5)
   nodejs (= 4.0.1)
   openssl (= 1.0.0)
-  phantomjs (= 2.4.0)
+  osx (= 2.7.1)
   pkgconfig (= 1.0.0)
+  postgresql (= 3.0.3)
+  protobuf (= 1.0.0)
+  python (= 1.3.0)
+  redis (= 3.1.0)
   repository (= 2.4.1)
   ruby (= 8.5.2)
   stdlib (= 4.2.1)
+  sublime_text (= 1.1.0)
   sudo (= 1.0.0)
-  xquartz (= 1.2.1)
+  sysctl (= 1.0.1)
+  vagrant (= 3.2.0)
+  vim (= 1.0.5)
+  virtualbox (= 1.0.10)
+  wget (= 1.0.1)
+  zsh (= 1.0.0)
 

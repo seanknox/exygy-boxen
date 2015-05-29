@@ -1,0 +1,33 @@
+{
+  "installed_packages":
+  [
+    "AdvancedNewFile",
+    "All Autocomplete",
+    "BracketHighlighter",
+    "DashDoc",
+    "eco",
+    "Git",
+    "GitGutter",
+    "GitHub Flavored Markdown Preview",
+    "Handlebars",
+    "JavaScript Snippets",
+    "LESS",
+    "Markdown Extended",
+    "Puppet",
+    "Quick File Move",
+    "RSpec",
+    "Ruby Block Converter",
+    "Ruby Slim",
+    "RubyTest",
+    "Sass",
+    "Search in Project",
+    "SideBarEnhancements",
+    "SublimeLinter-html-tidy",
+    "SublimeLinter-jshint",
+    "SublimeLinter-json",
+    "SublimeLinter-rubocop",
+    "Surround",
+    "SyncedSideBar",
+    "Vintageous"
+  ]
+}
