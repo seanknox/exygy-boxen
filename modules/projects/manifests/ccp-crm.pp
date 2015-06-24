@@ -1,4 +1,4 @@
-class projects::ccp {
+class projects::ccp-crm {
   include heroku
 
   require postgresql
@@ -9,16 +9,29 @@ class projects::ccp {
       ensure => latest,
   }
 
-  $ccp_ruby_version = '2.1.6'
+  $ccp_ruby_version = '2.2.2'
   $ccp_node_version = 'v0.12.0'
 
-  boxen::project { 'ccp':
+  boxen::project { 'ccp-crm':
     redis         => true,
     postgresql    => true,
     ruby          => $ccp_ruby_version,
     nginx         => true,
     nodejs        => $ccp_node_version,
-    source        => 'Exygy/ccp-crm'
+    source        => 'CaliforniaCleanPower/ccp-crm',
+    dir           => "${boxen::config::srcdir}/exygy/ccp-crm"
+  }
+
+  file { "${boxen::config::srcdir}/exygy/ccp-crm/config/database.yml":
+      content => template('projects/shared/database.yml'),
+      require => Repository["${boxen::config::srcdir}/exygy/ccp-crm"],
+      replace => 'no'
+  }
+
+  boxen::env_script { 'redis_provider':
+    ensure   => $ensure,
+    content  => template('projects/shared/redis_provider.sh.erb'),
+    priority => 'lowest',
   }
 
   ## rbenv-installed gems cannot be run in the boxen installation environment
@@ -37,7 +50,7 @@ class projects::ccp {
   exec { 'bundle install ccp':
     provider  => 'shell',
     command   => "${bundle} install'",
-    cwd       => "${boxen::config::srcdir}/ccp",
+    cwd       => "${boxen::config::srcdir}/exygy/ccp-crm",
     require   => [
       Ruby[$ccp_ruby_version],
       Ruby_Gem["bundler for all rubies"],
@@ -51,8 +64,9 @@ class projects::ccp {
   exec { 'rake db:setup ccp':
     provider  => 'shell',
     command   => "${bundle} exec rake db:setup'",
-    cwd       => "${boxen::config::srcdir}/ccp",
+    cwd       => "${boxen::config::srcdir}/exygy/ccp-crm",
     require   => [
+      File["${boxen::config::srcdir}/exygy/ccp-crm/config/database.yml"],
       Exec['bundle install ccp']
     ]
   }
@@ -60,7 +74,7 @@ class projects::ccp {
   exec { 'overcommit install ccp':
     provider  => 'shell',
     command   => "${bundle} exec overcommit --install --force && rm .git/hooks/post-checkout .git/hooks/commit-msg'",
-    cwd       => "${boxen::config::srcdir}/ccp",
+    cwd       => "${boxen::config::srcdir}/exygy/ccp-crm",
     require   => [
       Exec['bundle install ccp'],
       Exec['npm install']
@@ -70,7 +84,7 @@ class projects::ccp {
   exec { 'npm install':
     provider => 'shell',
     command  => "$base_environment npm install'",
-    cwd      => "${boxen::config::srcdir}/ccp",
+    cwd      => "${boxen::config::srcdir}/exygy/ccp-crm",
     require  => Nodejs[$ccp_node_version]
   }
 }
